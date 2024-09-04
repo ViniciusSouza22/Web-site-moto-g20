@@ -6,6 +6,22 @@ body {
 
 .navbar {
     background-color: #333;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 14px;
+    background-color: #333;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
 }
 
 .nav-list {
@@ -55,13 +71,34 @@ body {
     display: block;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+    }
+    
+    .nav-list.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .dropdown-menu {
+        position: static;
+    }
+    
+    .dropdown-menu li a {
+        padding: 10px 20px;
+    }
 }
+
 
 main {
 
